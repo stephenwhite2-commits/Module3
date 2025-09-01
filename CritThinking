@@ -1,43 +1,26 @@
-START
-// State constant for tip and tax rate per critical thinking assignment
-SET TIP_RATE = 0.18
-SET SALES_TAX_RATE = 0.07
-// Ask the user to enter the charge
-PROMPT "Enter the charge"
-READ food_charge
-// Convert input to a number
-CONVERT food_charge TO FLOAT
-// Calculate amounts
-Calculate tip_amount = food_charge * TIP_RATE
-Calculate tax_amount = food_charge * SALES_TAX_RATE
-// Calculate Total
-CALCULATE TOTAL = food_charge + tip_amount + tax_amount
-// Display results
-DISPLAY "Charge: ", food_charge
-DISPLAY "Tip (18%): ", tip_amount
-DISPLAY "Sales Tax (7%): ", tax_amount
-DISPLAY "Total: ", TOTAL
-END
-
-# Constants for tip and tax rate
-TIP_RATE = 0.18
+# Provide constants for tip and tax per instructions
+TIP_RATE = 0.13
 SALES_TAX_RATE = 0.07
 
 def main():
-  food_charge_input = input("Enter the charge for the food: $")
-  food_charge = float(food_charge_input)
-  # Calculate the tip and sales amounts
-  tip_amount = food_charge * TIP_RATE
-  tax_amount = food_charge * SALES_TAX_RATE
-  # Calculate price
-  Total = food_charge + tip_amount + tax_amount
-  # Display the results
-  print(f"Charge for the food: ${food_charge:.2f}")
-  print(f"Tip (18%): ${tip_amount:.2f}")
-  print(f"Sales Tax (7%): ${tax_amount:.2f}")
-  print(f"Total Price: ${total_price:.2f}")
-# provide error response
-except ValueError:
-  print("Error: Please enter a valid response for the food charge.")
-
-  
+  """
+  Calculates the total cost, provides additional information like tip and sales tax.
+  """
+  try:
+    food_charge_input = input("Enter the charge for the food: $")
+    food_charge = float(food_charge_input)
+    # Calculate the tip and sales amounts
+    tip_amount = food_charge * TIP_RATE
+    tax_amount = food_charge * SALES_TAX_RATE
+    # Calculate price
+    Total = food_charge + tip_amount + tax_amount
+    # Display the results
+    print(f"Charge for the food: ${food_charge:.2f}")
+    print(f"Tip (18%): ${tip_amount:.2f}")
+    print(f"Sales Tax (7%): ${tax_amount:.2f}")
+    print(f"Total Price: ${Total:.2f}")
+  # provide error response
+  except ValueError:
+    print("Error: Please enter a valid response for the food charge.")
+if __name__ == "__main__":
+  main()
