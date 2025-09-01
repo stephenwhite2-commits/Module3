@@ -1,4 +1,4 @@
-def main (main):
+def main ():
   """
   Calculates the time on a 24-hour clock for a future alarm
   """
